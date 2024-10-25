@@ -60,13 +60,15 @@ begin
   x := xmin;
   ymin := ln(1 + xmin);
   ymax := ln(1 + xmax);
+  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, PaintBox1.Height div 2);
   for i := 1 to dot do
     begin
       y := ln(1 + x);
       ix := Trunc(((x - xmin) * (PaintBox1.Width - 0)) / (xmax - xmin));
-      jy := Trunc(((y - ymin) * (PaintBox1.Height - 0)) / (ymin - ymax));
+      jy := Trunc((((y - ymin) * (PaintBox1.Height - 0)) / (ymin - ymax)) + PaintBox1.Height);
 
-      PaintBox1.Canvas.MoveTo(ix, jy);
+      //PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, PaintBox1.Height div 2);
+     Canvas.Ellipse(ix + PaintBox1.Width div 2, jy - PaintBox1.Height div 2, 1, 1);
 
       x := x + step;
     end;
