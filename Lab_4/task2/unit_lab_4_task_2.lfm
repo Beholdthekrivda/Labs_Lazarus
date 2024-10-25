@@ -1,12 +1,11 @@
 object Form1: TForm1
-  Left = 50
+  Left = 156
   Height = 500
-  Top = 235
+  Top = 167
   Width = 700
   Caption = 'Form1'
-  ClientHeight = 0
-  ClientWidth = 0
-  OnCreate = FormCreate
+  ClientHeight = 500
+  ClientWidth = 700
   LCLVersion = '3.4.0.0'
   object Label1: TLabel
     Left = 32
@@ -62,5 +61,11 @@ object Form1: TForm1
     Caption = 'Выход'
     TabOrder = 4
     OnClick = Button2Click
+  end
+  object PaintBox1: TPaintBox
+    Left = 112
+    Height = 343
+    Top = 112
+    Width = 343
   end
 end

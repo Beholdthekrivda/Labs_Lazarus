@@ -18,10 +18,11 @@ type
     Edit2: TEdit;
     Edit3: TEdit;
     Label1: TLabel;
+    PaintBox1: TPaintBox;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
-    procedure PaintBox1Click(Sender: TObject);
+    //procedure FormCreate(Sender: TObject);
+    //procedure PaintBox1Click(Sender: TObject);
     //procedure Image1Click(Sender: TObject);
   private
 
@@ -42,9 +43,10 @@ procedure TForm1.Button1Click(Sender: TObject);
 var xmin, xmax, step, y, x, ymin, ymax: real;
     dot, i, ix, jy: integer;
 begin
-  Canvas.Rectangle(100, 100, 450, 450);
-  Canvas.Line(100, 275, 450, 275);
-  Canvas.Line(275, 100, 275, 450);
+  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, 0);
+  PaintBox1.Canvas.LineTo(PaintBox1.Width div 2, PaintBox1.Height);
+  PaintBox1.Canvas.MoveTo(0, PaintBox1.Height div 2);
+  PaintBox1.Canvas.LineTo(PaintBox1.Width, PaintBox1.Height div 2);
 
   xmin := StrToFloat(Edit1.Text);
   xmax := StrToFloat(Edit2.Text);
@@ -53,12 +55,13 @@ begin
   step := (abs(xmin) + abs(xmax)) / dot;
   x := xmin;
   ymin := sin(xmin);
-  ymax := sin(xmax);
+  ymax := sin(xmax); //Посмотреть как найти максимальное значение функции
+  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, PaintBox1.Height div 2);
   for i := 1 to dot do
     begin
       y := sin(x);
-      ix := Round((((x - xmin) * (450 - 100)) / (xmax - xmin)) + 100);
-      jy := Round((((y - ymin) * (450 - 100)) /(ymin - ymax)) + 450);
+      ix := Trunc((((x - xmin) * (PaintBox1.Width)) / (xmax - xmin)));
+      jy := Trunc((((y - xmin) * (PaintBox1.Height)) /(xmin - xmax)));
 
       //Canvas.MoveTo(Canvas.Width div 2, Canvas.Height div 2);
       Canvas.Ellipse(ix, jy, ix + 5, jy + 5);
@@ -71,16 +74,6 @@ end;
 procedure TForm1.Button2Click(Sender: TObject);
 begin
   close;
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-
-end;
-
-procedure TForm1.PaintBox1Click(Sender: TObject);
-begin
-
 end;
 
 end.
