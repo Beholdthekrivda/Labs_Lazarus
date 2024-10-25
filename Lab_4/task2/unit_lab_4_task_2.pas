@@ -63,22 +63,21 @@ begin
 
   step := (abs(xmax) + abs(xmin)) / dot;
   x := xmin;
-  ymin := ln(1 + xmin);
-  ymax := ln(1 + xmax);
+  ymin := sqrt(xmin);
+  ymax := sqrt(xmax);
 
-  PaintBox1.Canvas.MoveTo(PaintBox1.Width, PaintBox1.Height);
+  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, PaintBox1.Height div 2);
   Canvas.Brush.Color := clBlack;
   for i := 1 to dot do
     begin
       //Canvas.FillRect(0, 500, 700, 700);
-      y := ln(1 + x);
+      y := sqrt(x);
       x := x + step;
 
       ix := Trunc((((x - xmin) * (PaintBox1.Width)) / (xmax - xmin)) + 112);
       jy := Trunc((((y - ymin) * (PaintBox1.Height)) / (ymin - ymax)) + PaintBox1.Height);
-      //canvas.rectangle(112,112,PaintBox1.Width+112,PaintBox1.Height+112);
 
-      PaintBox1.Canvas.Ellipse();
+      Canvas.Ellipse(ix, jy, ix + z, jy + z);
 
       //x := x + step;
     end;
