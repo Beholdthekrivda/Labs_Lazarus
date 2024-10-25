@@ -22,6 +22,8 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure PaintBox1Click(Sender: TObject);
+    //procedure Image1Click(Sender: TObject);
   private
 
   public
@@ -39,17 +41,20 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 var y, x, step, xmin, xmax, ymin, ymax: real;
-    dot, ix, jy, i: integer;
+    dot, ix, jy, i, z: integer;
 begin
   xmin := StrToFloat(Edit1.Text);
   xmax := StrToFloat(Edit2.Text);
   dot := StrToInt(Edit3.Text);
+  z := 5;
 
-  if (xmin < (-0.86)) or (xmax > 1) or (dot <= 0) then
-    begin
-      ShowMessage('Неправильный ввод');
-      exit;
-    end;
+  //if (xmin < (-0.86)) or (xmax > 1) or (dot <= 0) then
+  //  begin
+  //    ShowMessage('Неправильный ввод');
+  //    exit;
+  //  end;
+
+  PaintBox1.Canvas.Clear;
 
   PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, 0);
   PaintBox1.Canvas.LineTo(PaintBox1.Width div 2, PaintBox1.Height);
@@ -60,17 +65,22 @@ begin
   x := xmin;
   ymin := ln(1 + xmin);
   ymax := ln(1 + xmax);
-  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, PaintBox1.Height div 2);
+
+  PaintBox1.Canvas.MoveTo(PaintBox1.Width, PaintBox1.Height);
+  Canvas.Brush.Color := clBlack;
   for i := 1 to dot do
     begin
+      //Canvas.FillRect(0, 500, 700, 700);
       y := ln(1 + x);
-      ix := Trunc(((x - xmin) * (PaintBox1.Width - 0)) / (xmax - xmin));
-      jy := Trunc((((y - ymin) * (PaintBox1.Height - 0)) / (ymin - ymax)) + PaintBox1.Height);
-
-      //PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, PaintBox1.Height div 2);
-     Canvas.Ellipse(ix + PaintBox1.Width div 2, jy - PaintBox1.Height div 2, 1, 1);
-
       x := x + step;
+
+      ix := Trunc((((x - xmin) * (PaintBox1.Width)) / (xmax - xmin)) + 112);
+      jy := Trunc((((y - ymin) * (PaintBox1.Height)) / (ymin - ymax)) + PaintBox1.Height);
+      //canvas.rectangle(112,112,PaintBox1.Width+112,PaintBox1.Height+112);
+
+      PaintBox1.Canvas.Ellipse();
+
+      //x := x + step;
     end;
 end;
 
@@ -81,6 +91,11 @@ begin
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.PaintBox1Click(Sender: TObject);
 begin
 
 end;
