@@ -17,13 +17,9 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
-    Label1: TLabel;
     PaintBox1: TPaintBox;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
-    //procedure FormCreate(Sender: TObject);
-    //procedure PaintBox1Click(Sender: TObject);
-    //procedure Image1Click(Sender: TObject);
   private
 
   public
@@ -39,44 +35,53 @@ implementation
 
 { TForm1 }
 
-procedure TForm1.Button1Click(Sender: TObject);
-var xmin, xmax, step, y, x, ymin, ymax: real;
-    dot, i, ix, jy: integer;
-begin
-  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, 0);
-  PaintBox1.Canvas.LineTo(PaintBox1.Width div 2, PaintBox1.Height);
-  PaintBox1.Canvas.MoveTo(0, PaintBox1.Height div 2);
-  PaintBox1.Canvas.LineTo(PaintBox1.Width, PaintBox1.Height div 2);
-
-  xmin := StrToFloat(Edit1.Text);
-  xmax := StrToFloat(Edit2.Text);
-  dot := StrToInt(Edit3.Text);
-
-  step := (abs(xmin) + abs(xmax)) / dot;
-  x := xmin;
-  ymin := sin(xmin);
-  ymax := sin(xmax); //Посмотреть как найти максимальное значение функции
-  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, PaintBox1.Height div 2);
-  for i := 1 to dot do
-    begin
-      y := sin(x);
-      ix := Trunc((((x - xmin) * (PaintBox1.Width)) / (xmax - xmin)));
-      jy := Trunc((((y - xmin) * (PaintBox1.Height)) /(xmin - xmax)));
-
-      //Canvas.MoveTo(Canvas.Width div 2, Canvas.Height div 2);
-      Canvas.Ellipse(ix, jy, ix + 5, jy + 5);
-
-      x := x + step;
-    end;
-end;
-
-
 procedure TForm1.Button2Click(Sender: TObject);
 begin
   close;
 end;
 
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  i, dot: Integer;
+  step, x, y, ymin: Real;
+  xScale, yScale: Double;
+  xmin, xmax: Real;
+begin
+  PaintBox1.Canvas.Clear;
+  Canvas.Pen.Color := clRed;
+
+  xScale := 50;
+  yScale := 50;
+
+  PaintBox1.Canvas.MoveTo(0, PaintBox1.Height div 2);
+  PaintBox1.Canvas.LineTo(PaintBox1.Width, PaintBox1.Height div 2);
+  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, 0);
+  PaintBox1.Canvas.LineTo(PaintBox1.Width div 2, PaintBox1.Height);
+
+  xmin := StrToFloat(Edit2.Text);
+  xmax := StrToFloat(Edit3.Text);
+  dot := StrToInt(Edit1.Text);
+
+  if (xmin <= -1) or (dot <= 0) then
+    begin
+      ShowMessage('Неправильный ввод');
+      exit;
+    end;
+
+  step := (abs(xmax) + abs(xmin)) / dot;
+  ymin := ln(1 + xmin);
+
+  //Canvas.Pen.Color := clRed;
+  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2 + Round(xmin * xScale), PaintBox1.Height div 2 - Round(ymin * yScale));
+  for i := 0 to dot do
+  begin
+    x := xmin + i * step;
+    y := ln(1 + x);
+
+    PaintBox1.Canvas.LineTo(PaintBox1.Width div 2 + Round(x * xScale),  PaintBox1.Height div 2 - Round(y * yScale));
+  end;
+end;
+
+
 end.
-
-
 

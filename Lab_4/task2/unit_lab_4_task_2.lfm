@@ -1,71 +1,58 @@
 object Form1: TForm1
-  Left = 156
-  Height = 500
-  Top = 167
-  Width = 700
+  Left = 566
+  Height = 400
+  Top = 216
+  Width = 692
   Caption = 'Form1'
-  ClientHeight = 500
-  ClientWidth = 700
+  ClientHeight = 400
+  ClientWidth = 692
   LCLVersion = '3.4.0.0'
-  object Label1: TLabel
-    Left = 32
-    Height = 40
-    Top = 24
-    Width = 636
-    Caption = 'Построение графика функции y = ln(1 + x)'
-    Font.CharSet = RUSSIAN_CHARSET
-    Font.Height = -35
-    Font.Name = 'Times New Roman'
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    ParentFont = False
-  end
-  object Edit1: TEdit
-    Left = 540
-    Height = 23
-    Top = 112
-    Width = 128
-    TabOrder = 0
-    TextHint = 'Min X'
-  end
-  object Edit2: TEdit
-    Left = 540
-    Height = 23
-    Top = 181
-    Width = 128
-    TabOrder = 1
-    TextHint = 'Max X'
-  end
-  object Edit3: TEdit
-    Left = 540
-    Height = 23
-    Top = 250
-    Width = 128
-    TabOrder = 2
-    TextHint = 'Кол-во точек'
-  end
   object Button1: TButton
-    Left = 540
-    Height = 50
-    Top = 317
-    Width = 128
-    Caption = 'Построить'
-    TabOrder = 3
+    Left = 506
+    Height = 43
+    Top = 16
+    Width = 136
+    Caption = 'Построить график'
+    TabOrder = 0
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 540
-    Height = 50
-    Top = 405
-    Width = 128
+    Left = 506
+    Height = 41
+    Top = 312
+    Width = 136
     Caption = 'Выход'
-    TabOrder = 4
+    TabOrder = 1
     OnClick = Button2Click
   end
+  object Edit1: TEdit
+    Left = 506
+    Height = 23
+    Top = 256
+    Width = 136
+    TabOrder = 2
+    TextHint = 'Кол-во точек'
+  end
   object PaintBox1: TPaintBox
-    Left = 112
-    Height = 343
-    Top = 112
-    Width = 343
+    Left = 32
+    Height = 337
+    Top = 16
+    Width = 456
+  end
+  object Edit2: TEdit
+    Left = 506
+    Height = 23
+    Top = 176
+    Width = 136
+    TabOrder = 3
+    TextHint = 'Min X'
+  end
+  object Edit3: TEdit
+    Left = 506
+    Height = 23
+    Top = 96
+    Width = 136
+    TabOrder = 4
+    TextHint = 'Max X'
   end
 end

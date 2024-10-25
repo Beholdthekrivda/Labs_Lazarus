@@ -5,13 +5,14 @@
     <PathDelim Value="\"/>
     <General>
       <SessionStorage Value="InProjectDir"/>
-      <Title Value="lab_4"/>
+      <Title Value="Lab_4_task_2"/>
       <Scaled Value="True"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <XPManifest>
         <DpiAware Value="True"/>
       </XPManifest>
+      <Icon Value="0"/>
     </General>
     <BuildModes>
       <Item Name="Default" Default="True"/>
@@ -30,8 +31,9 @@
     </RequiredPackages>
     <Units>
       <Unit>
-        <Filename Value="lab_4.lpr"/>
+        <Filename Value="lab_4_task_2.lpr"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="Lab_4_task_2"/>
       </Unit>
       <Unit>
         <Filename Value="unit_lab_4_task_2.pas"/>
@@ -46,7 +48,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="lab_4"/>
+      <Filename Value="Lab_4_task_2"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
