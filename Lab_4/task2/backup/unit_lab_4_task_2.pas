@@ -18,7 +18,6 @@ type
     Edit2: TEdit;
     Edit3: TEdit;
     Label1: TLabel;
-    PaintBox1: TPaintBox;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -40,46 +39,31 @@ implementation
 { TForm1 }
 
 procedure TForm1.Button1Click(Sender: TObject);
-var y, x, step, xmin, xmax, ymin, ymax: real;
-    dot, ix, jy, i, z: integer;
+var xmin, xmax, step, y, x, ymin, ymax: real;
+    dot, i, ix, jy: integer;
 begin
+  Canvas.Rectangle(100, 100, 450, 450);
+  Canvas.Line(100, 275, 450, 275);
+  Canvas.Line(275, 100, 275, 450);
+
   xmin := StrToFloat(Edit1.Text);
   xmax := StrToFloat(Edit2.Text);
   dot := StrToInt(Edit3.Text);
-  z := 5;
 
-  //if (xmin < (-0.86)) or (xmax > 1) or (dot <= 0) then
-  //  begin
-  //    ShowMessage('Неправильный ввод');
-  //    exit;
-  //  end;
-
-  PaintBox1.Canvas.Clear;
-
-  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, 0);
-  PaintBox1.Canvas.LineTo(PaintBox1.Width div 2, PaintBox1.Height);
-  PaintBox1.Canvas.MoveTo(0, PaintBox1.Height div 2);
-  PaintBox1.Canvas.LineTo(PaintBox1.Width, PaintBox1.Height div 2);
-
-  step := (abs(xmax) + abs(xmin)) / dot;
+  step := (abs(xmin) + abs(xmax)) / dot;
   x := xmin;
-  ymin := sqrt(xmin);
-  ymax := sqrt(xmax);
-
-  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, PaintBox1.Height div 2);
-  Canvas.Brush.Color := clBlack;
+  ymin := sin(xmin);
+  ymax := sin(xmax);
   for i := 1 to dot do
     begin
-      //Canvas.FillRect(0, 500, 700, 700);
-      y := sqrt(x);
+      y := sin(x);
+      ix := Round((((x - xmin) * (450 - 100)) / (xmax - xmin)) + 100);
+      jy := Round((((y - ymin) * (450 - 100)) /(ymin - ymax)) + 450);
+
+      //Canvas.MoveTo(Canvas.Width div 2, Canvas.Height div 2);
+      Canvas.Ellipse(ix, jy, ix + 5, jy + 5);
+
       x := x + step;
-
-      ix := Trunc((((x - xmin) * (PaintBox1.Width + 112)) / (xmax - xmin)) + 112);
-      jy := Trunc((((y - ymin) * (PaintBox1.Height + 112)) / (ymin - ymax)) + PaintBox1.Height);
-
-      Canvas.Ellipse(ix, jy, ix + z, jy + z);
-
-      //x := x + step;
     end;
 end;
 
