@@ -5,7 +5,7 @@ unit unit_lab_4;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, Math;
 
 type
 
@@ -38,8 +38,8 @@ implementation
 { TForm1 }
 
 procedure TForm1.Button1Click(Sender: TObject);
-var xmin, xmax: real;
-    dot: integer;
+var y, x, step, xmin, xmax, ymin, ymax: real;
+    dot, ix, jy, i: integer;
 begin
   xmin := StrToFloat(Edit1.Text);
   xmax := StrToFloat(Edit2.Text);
@@ -55,6 +55,20 @@ begin
   PaintBox1.Canvas.MoveTo(0, PaintBox1.Height div 2);
   PaintBox1.Canvas.LineTo(PaintBox1.Width, PaintBox1.Height div 2);
 
+  step := (abs(xmax) + abs(xmin)) / dot;
+  x := xmin;
+  ymin := ln(1 + xmin);
+  ymax := ln(1 + xmax);
+  for i := 1 to dot do
+    begin
+      y := ln(1 + x);
+      ix := Trunc(((x - xmin) * (PaintBox1.Width - 0)) / (xmax - xmin));
+      jy := Trunc(((y - ymin) * (PaintBox1.Height - 0)) / (ymin - ymax));
+
+      PaintBox1.Canvas.MoveTo(ix, jy);
+
+      x := x + step;
+    end;
 end;
 
 
