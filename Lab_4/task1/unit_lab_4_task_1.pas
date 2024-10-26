@@ -33,30 +33,29 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  Brush.Color:=clForm;
+  Brush.Color := clForm;
   Canvas.FillRect(0,0, Width, Height);
 
-  Canvas.Pen.Color:=clGreen;
-  Canvas.Pen.Width:=3;
-  Canvas.Brush.Color:=clRed;
-  Canvas.EllipseC(75,75,25,25);
+  Canvas.Pen.Color := clGreen; //цвет окантовки круга
+  Canvas.Pen.Width := 3; //ширина окантовки
+  Canvas.Brush.Color := clRed; //цвет заливки внутри круга
+  Canvas.EllipseC(75, 75, 25, 25); //рисование круга по координатам
 
-  Canvas.Pen.Color:=clRed;
-  Canvas.Brush.Color:=clGreen;
-  Canvas.Brush.Style:=bsCross;
-  Canvas.Rectangle(110, 50, 210, 100);
+  Canvas.Pen.Color := clRed; //цвет окантовки прямоугольника
+  Canvas.Brush.Color := clGreen; //цвет внутри прямоугольника
+  Canvas.Brush.Style := bsCross; //стиль рисования сеточкой
+  Canvas.Rectangle(110, 50, 210, 100); //рисование прямоугольника по координатам
 
-  Canvas.Pen.Color:=clBlack;
-  Canvas.Pen.Width:=10;
-  Canvas.Line(10, 120, 360, 120);
+  Canvas.Pen.Color := clBlack; //цвет линии
+  Canvas.Pen.Width := 10; //ширина линии
+  Canvas.Line(10, 120, 360, 120); //рисование линии по координатам
 
-  Canvas.Brush.Color:=clForm;
-  Canvas.Font.Color:=clBlue;
-  Canvas.Font.Name:='Courier';
-  Canvas.Font.Size:=30;
-  Canvas.Font.Style:=[fsBold];
-  Canvas.TextOut(60, 150, 'Рисунок');
-
+  Canvas.Brush.Color := clForm; //установление цвета формы
+  Canvas.Font.Color := clBlue; //цвет текста
+  Canvas.Font.Name := 'Courier'; //выбор шрифта
+  Canvas.Font.Size := 30; //размер шрифта
+  Canvas.Font.Style := [fsBold]; //делает шрифт жирным
+  Canvas.TextOut(60, 150, 'Рисунок'); //рисует текст по координатам
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
