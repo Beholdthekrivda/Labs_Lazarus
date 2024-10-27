@@ -47,6 +47,7 @@ object Form1: TForm1
     Width = 96
     Caption = 'Линейная'
     TabOrder = 4
+    OnClick = Button4Click
   end
   object Button5: TButton
     Left = 280
@@ -101,6 +102,8 @@ object Form1: TForm1
     Top = 72
   end
   object SelectDirectoryDialog1: TSelectDirectoryDialog
+    FileName = 'C:\Users\bruh263\Desktop\Labs_Lazarus\Lab_5'
+    InitialDir = 'C:\Users\bruh263\Desktop\Labs_Lazarus\'
     Left = 216
     Top = 72
   end

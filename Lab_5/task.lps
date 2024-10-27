@@ -20,14 +20,71 @@
         <ComponentName Value="Form1"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="10"/>
-        <CursorPos X="40" Y="34"/>
+        <TopLine Value="81"/>
+        <CursorPos X="25" Y="91"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory HistoryIndex="13">
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="30" Column="65" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="31" Column="65" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="32" Column="65" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="31" Column="65" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="30" Column="49" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="31" Column="49" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="32" Column="49" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="25" Column="55" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="26" Column="55" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="27" Column="55" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="28" Column="55" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="17" Column="33" TopLine="19"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="39" Column="34" TopLine="21"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="91" Column="27" TopLine="83"/>
+      </Position>
+    </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>

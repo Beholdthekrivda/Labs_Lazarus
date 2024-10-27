@@ -8,7 +8,7 @@ object Form1: TForm1
   ClientWidth = 650
   LCLVersion = '3.4.0.0'
   object Edit1: TEdit
-    Left = 32
+    Left = 48
     Height = 23
     Top = 16
     Width = 98
@@ -16,25 +16,25 @@ object Form1: TForm1
     TextHint = 'Кол-во элементов в списке '
   end
   object Button1: TButton
-    Left = 160
+    Left = 184
     Height = 24
-    Top = 15
+    Top = 16
     Width = 115
     Caption = 'Сохранение файла'
     TabOrder = 1
   end
   object Button2: TButton
-    Left = 304
+    Left = 336
     Height = 24
-    Top = 15
+    Top = 16
     Width = 115
     Caption = 'Открыть файл'
     TabOrder = 2
   end
   object Button3: TButton
-    Left = 448
+    Left = 488
     Height = 24
-    Top = 15
+    Top = 16
     Width = 115
     Caption = 'Выход'
     TabOrder = 3
@@ -47,6 +47,7 @@ object Form1: TForm1
     Width = 96
     Caption = 'Линейная'
     TabOrder = 4
+    OnClick = Button4Click
   end
   object Button5: TButton
     Left = 280
@@ -64,12 +65,46 @@ object Form1: TForm1
     Caption = 'Слияние'
     TabOrder = 6
   end
+  object ListBox1: TListBox
+    Left = 80
+    Height = 200
+    Top = 168
+    Width = 96
+    ItemHeight = 0
+    TabOrder = 7
+  end
+  object ListBox2: TListBox
+    Left = 280
+    Height = 200
+    Top = 168
+    Width = 96
+    ItemHeight = 0
+    TabOrder = 8
+  end
+  object ListBox3: TListBox
+    Left = 480
+    Height = 200
+    Top = 168
+    Width = 96
+    ItemHeight = 0
+    TabOrder = 9
+  end
+  object ListBox4: TListBox
+    Left = 80
+    Height = 88
+    Top = 408
+    Width = 496
+    ItemHeight = 0
+    TabOrder = 10
+  end
   object OpenDialog1: TOpenDialog
-    Left = 600
+    Left = 416
     Top = 72
   end
   object SelectDirectoryDialog1: TSelectDirectoryDialog
-    Left = 600
-    Top = 16
+    FileName = 'C:\Users\bruh263\Desktop\Labs_Lazarus\Lab_5'
+    InitialDir = 'C:\Users\bruh263\Desktop\Labs_Lazarus\'
+    Left = 216
+    Top = 72
   end
 end
