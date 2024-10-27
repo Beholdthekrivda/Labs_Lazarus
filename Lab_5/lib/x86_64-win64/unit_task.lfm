@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 316
+  Left = 205
   Height = 523
-  Top = 168
+  Top = 274
   Width = 650
   Caption = 'Form1'
   ClientHeight = 0
@@ -56,6 +56,7 @@ object Form1: TForm1
     Width = 96
     Caption = 'Упоряоченная'
     TabOrder = 5
+    OnClick = Button5Click
   end
   object Button6: TButton
     Left = 480
