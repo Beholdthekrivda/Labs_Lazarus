@@ -4,8 +4,8 @@ object Form1: TForm1
   Top = 168
   Width = 650
   Caption = 'Form1'
-  ClientHeight = 523
-  ClientWidth = 650
+  ClientHeight = 0
+  ClientWidth = 0
   LCLVersion = '3.4.0.0'
   object Edit1: TEdit
     Left = 48

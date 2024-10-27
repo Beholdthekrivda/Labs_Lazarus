@@ -20,14 +20,15 @@
         <ComponentName Value="Form1"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="81"/>
-        <CursorPos X="23" Y="95"/>
+        <TopLine Value="53"/>
+        <CursorPos X="32" Y="67"/>
+        <ComponentState Value="1"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="13">
+    <JumpHistory HistoryIndex="20">
       <Position>
         <Filename Value="unit_task.pas"/>
         <Caret Line="30" Column="65" TopLine="10"/>
@@ -83,6 +84,34 @@
       <Position>
         <Filename Value="unit_task.pas"/>
         <Caret Line="91" Column="27" TopLine="83"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="109" Column="16" TopLine="93"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="45" Column="32" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="59" Column="7" TopLine="41"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="97" Column="31" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="81" Column="15" TopLine="72"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="89" Column="37" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_task.pas"/>
+        <Caret Line="85" Column="44" TopLine="76"/>
       </Position>
     </JumpHistory>
     <RunParams>

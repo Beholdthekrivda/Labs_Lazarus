@@ -33,8 +33,17 @@ type
 
   end;
 
+type
+  PNode = ^Node;
+
+  Node = record
+  data: integer;
+  next: PNode;
+  end;
+
 var
   Form1: TForm1;
+  head: PNode;
 
 implementation
 
@@ -42,70 +51,52 @@ implementation
 
 { TForm1 }
 
+procedure CreateList(n: integer);
+var
+  temp, newNode: PNode;
+  i: integer;
+begin
+  randomize;
+  for i := 1 to n do
+    begin
+      New(newNode);
+      newNode^.data := Random(2000) - 1000;
+      newNode^.next := nil;
+
+      if head = nil then
+        head := newNode
+      else
+        begin
+          temp := head;
+          while temp^.next <> nil do
+            temp := temp^.next;
+          temp^.next := newNode;
+        end;
+    end;
+end;
+
 procedure TForm1.Button3Click(Sender: TObject);
 begin
   Close;
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
-type
-    // Определение типа узла линейного списка
-    PNode = ^Node;
-    Node = record
-        data: Integer; // Данные узла
-        next: PNode;   // Указатель на следующий узел
-    end;
-var
-    head, temp, newNode: PNode;
-    i, n, z: Integer;
+var temp: PNode;
+    i: integer;
 begin
-    randomize;
-    ListBox1.Items.Clear;
-    head := nil; // Инициализируем начало списка пустым
-
-    // Ввод количества элементов, которые нужно добавить в список
-    n := StrToInt(Edit1.Text);
-
-    for i := 1 to n do
+  head := nil;
+  CreateList(StrToInt(Edit1.Text));
+  ListBox1.Items.Clear;
+  temp := head;
+  i := 0;
+  while temp <> nil do
     begin
-        // Создаем новый узел и заполняем его данными
-        New(newNode);            // Выделяем память для нового узла
-        newNode^.data := Random(2000) - 1000;  // Заполняем узел значением
-        newNode^.next := nil;    // Устанавливаем указатель следующего узла в nil
-
-        if head = nil then
-            head := newNode     // Если список пуст, то новый узел становится головой списка
-        else
-        begin
-            temp := head;
-            // Находим последний узел в списке
-            while temp^.next <> nil do
-                temp := temp^.next;
-            temp^.next := newNode; // Добавляем новый узел в конец списка
-        end;
+      listBox1.Items.Add(IntToStr(temp^.data));
+      temp := temp^.next;
+      i := i + 1;
+      if i = 40 then
+        break;
     end;
-
-    // Вывод элементов списка
-    //WriteLn('Элементы списка: ');
-    temp := head;
-    if n > 40 then
-      begin
-        z := 0;
-        while z <> 40 do
-          begin
-            ListBox1.Items.Add(IntToStr(temp^.data));
-            temp := temp^.next;
-            z := z + 1;
-          end;
-      end
-    else
-      begin
-        while temp <> nil do
-          begin
-            ListBox1.Items.Add(IntToStr(temp^.data));
-            temp := temp^.next;
-          end;
-      end;
 end;
 
 
