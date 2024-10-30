@@ -1,0 +1,85 @@
+object Form1: TForm1
+  Left = 975
+  Height = 563
+  Top = 169
+  Width = 780
+  Caption = 'Form1'
+  ClientHeight = 563
+  ClientWidth = 780
+  LCLVersion = '3.4.0.0'
+  object Button1: TButton
+    Left = 618
+    Height = 50
+    Top = 36
+    Width = 133
+    Caption = 'Рисовать'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 472
+    Height = 50
+    Top = 36
+    Width = 133
+    Caption = 'Выход'
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+  object Label1: TLabel
+    Left = 96
+    Height = 25
+    Top = 36
+    Width = 340
+    Caption = 'The TIOBE Programming Community index'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object ComboBox1: TComboBox
+    Left = 618
+    Height = 23
+    Top = 112
+    Width = 133
+    ItemHeight = 15
+    Items.Strings = (
+      '1'
+      '2'
+      '3'
+      '4'
+      '5'
+      '6'
+      '7'
+      '8'
+      '9'
+      '10'
+    )
+    TabOrder = 2
+    TextHint = 'Кол-во языков'
+  end
+  object Chart1: TChart
+    Left = 27
+    Height = 406
+    Top = 112
+    Width = 555
+    AxisList = <    
+      item
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Alignment = calBottom
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelBrush.Style = bsClear
+      end>
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    object Chart1PieSeries1: TPieSeries
+    end
+  end
+end

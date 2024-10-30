@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Spin,
-  EditBtn, ButtonPanel, TAGraph, TASeries;
+  EditBtn, ButtonPanel, TAGraph, TASeries, TARadialSeries;
 
 type
 
@@ -45,15 +45,14 @@ procedure TForm1.Button1Click(Sender: TObject);
 begin
   other := 0;
   Chart1BarSeries1.Clear; //очищение диаграммы
-  Chart1.Height := 100;
   Canvas.Brush.Color := clDefault;
   Canvas.FillRect(500, 0, 1000, 1000);
 
-  for i := 0 to StrToInt(ComboBox1.Text) do
+  for i := 1 to StrToInt(ComboBox1.Text) do
     begin
       Chart1BarSeries1.Add(LRate[i], lang[i], LColor[i]);
       other := other + LRate[i];
-      Canvas.Brush.Color := clForm;
+      //Canvas.Brush.Color := clForm;
       Canvas.Font.Color := LColor[i];
       Canvas.Font.Size := 10;
       Canvas.TextOut(618, 120 + i*30, lang[i]);
