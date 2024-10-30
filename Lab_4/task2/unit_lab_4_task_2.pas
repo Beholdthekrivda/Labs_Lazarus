@@ -40,21 +40,26 @@ begin
   close;
 end;
 
+function XI(x, xmax, xmin, width: real): integer;
+begin
+  XI :=  Round(((x - xmin) * (Width)) / (xmax - xmin));
+end;
+
+function YJ(y, ymax, ymin, Height: real): integer;
+begin
+  YJ := Round(((((y - ymin) * (Height)) / (ymin - ymax)) + Height));
+end;
+
 procedure TForm1.Button1Click(Sender: TObject);
 var
-  i, dot: Integer;
-  step, x, y, ymin: Real;
-  xScale, yScale: Double;
-  xmin, xmax: Real;
+  i, dot, ix, jy: Integer;
+  step, x, y, ymin, ymax, xmin, xmax: Real;
 begin
-  PaintBox1.Canvas.Clear; //очистка paintbox
+  PaintBox1.Canvas.Clear;
   PaintBox1.Canvas.Brush.Color := clForm;
+  Canvas.Brush.Color := clDefault;
+  Canvas.FillRect(0, 0, 1000, 1000);
 
-  //задаем масштаб
-  xScale := 30;
-  yScale := 30;
-
-  //рисуем оси Ox и Oy
   PaintBox1.Canvas.MoveTo(0, PaintBox1.Height div 2); //перемещение в середину
   PaintBox1.Canvas.LineTo(PaintBox1.Width, PaintBox1.Height div 2); //рисуем ось Ox
   PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2, 0); //перемещение в середину
@@ -64,25 +69,30 @@ begin
   xmax := StrToFloat(Edit3.Text);
   dot := StrToInt(ComboBox1.Text);
 
-  //if (xmin <= -1) or (dot <= 0) then
-  //  begin
-  //    ShowMessage('Неправильный ввод');
-  //    exit;
-  //  end;
+  if xmin >= xmax then
+    begin
+      ShowMessage('Неправильный ввод');
+      exit;
+    end;
 
   step := (abs(xmax) + abs(xmin)) / dot;
-  ymin := 2 * xmin + 3;
+  ymin := cos(Pi);
+  ymax := cos(0);
 
-  //перемещение в точку с начальными координатами xmin и ymin откуда будет строиться график
-  PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2 + Round(xmin * xScale), PaintBox1.Height div 2 - Round(ymin * yScale));
-  for i := 0 to dot do
+  x := xmin;
+  Canvas.Brush.Color := clRed;
+  //PaintBox1.Canvas.MoveTo(PaintBox1.Width div 2 + Round(xmin), PaintBox1.Height div 2 - Round(ymin));
+  for i := 1 to dot do
     begin
-      x := xmin + i * step;
-      y := 2 * x + 3;
+      y := cos(x);
 
-      //доп слагаемые нужны чтобы разместить точку относительно центра
-      PaintBox1.Canvas.LineTo(PaintBox1.Width div 2 + Round(x * xScale),  PaintBox1.Height div 2 - Round(y * yScale));
+      ix := XI(x, xmax, xmin, PaintBox1.Width);
+      jy := YJ(y, ymax, ymin, PaintBox1.Height);
+
+      Canvas.Ellipse(ix - 3, jy - 3, ix + 3, jy + 3);
+      x := x + step;
     end;
+
 end;
 
 

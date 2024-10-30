@@ -1,56 +1,50 @@
 object Form1: TForm1
-  Left = 670
-  Height = 389
-  Top = 124
-  Width = 692
+  Left = 507
+  Height = 675
+  Top = 132
+  Width = 883
   Caption = 'Form1'
-  ClientHeight = 389
-  ClientWidth = 692
+  ClientHeight = 675
+  ClientWidth = 883
   LCLVersion = '3.4.0.0'
   object Button1: TButton
-    Left = 506
+    Left = 720
     Height = 43
-    Top = 16
+    Top = 120
     Width = 136
     Caption = 'Построить график'
     TabOrder = 0
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 506
+    Left = 720
     Height = 41
-    Top = 96
+    Top = 200
     Width = 136
     Caption = 'Выход'
     TabOrder = 1
     OnClick = Button2Click
   end
-  object PaintBox1: TPaintBox
-    Left = 32
-    Height = 337
-    Top = 16
-    Width = 456
-  end
   object Edit2: TEdit
-    Left = 506
+    Left = 720
     Height = 23
-    Top = 176
+    Top = 280
     Width = 136
     TabOrder = 2
     TextHint = 'Min X'
   end
   object Edit3: TEdit
-    Left = 506
+    Left = 720
     Height = 23
-    Top = 232
+    Top = 336
     Width = 136
     TabOrder = 3
     TextHint = 'Max X'
   end
   object ComboBox1: TComboBox
-    Left = 506
+    Left = 720
     Height = 23
-    Top = 288
+    Top = 392
     Width = 136
     ItemHeight = 15
     Items.Strings = (
@@ -64,5 +58,11 @@ object Form1: TForm1
     )
     TabOrder = 4
     TextHint = 'Кол-во точек'
+  end
+  object PaintBox1: TPaintBox
+    Left = 0
+    Height = 650
+    Top = 0
+    Width = 650
   end
 end
