@@ -62,8 +62,8 @@ begin
 
   for i := 1 to n do
     begin
-      New(newNode);
-      newNode^.data := Random(2000) - 1000;
+      new(newNode);
+      newNode^.data := Random(1999) - 1000;
       newNode^.next := nil;
 
       if head = nil then
@@ -79,28 +79,33 @@ begin
 end;
 
 procedure SortList(var head: PNode);
-var current, nextNode: PNode;
-    tempData: integer;
-    swapped: boolean;
+var current, next, sorted: PNode;
+  prev: PNode;
 begin
-  repeat
-    swapped := False;
-    current := head;
+  current := head^.next; // Начинаем с второго узла
+  head^.next := nil; // Первый узел считается отсортированным
 
-    while (current <> nil) and (current^.next <> nil) do
+  while current <> nil do
+  begin
+    next := current^.next; // Сохраняем ссылку на следующий узел
+    sorted := head; // Указатель на начало отсортированного участка
+    // Ищем место для вставки, пока не дойдем до конца отсортированного участка
+    // или не встретим узел с данными, большими, чем данные current
+    while (sorted <> nil) and (current^.data > sorted^.data) do
     begin
-      nextNode := current^.next;
-      if current^.data > nextNode^.data then
-      begin
-        // Меняем местами данные
-        tempData := current^.data;
-        current^.data := nextNode^.data;
-        nextNode^.data := tempData;
-        swapped := True;
-      end;
-      current := current^.next;
+      prev := sorted;
+      sorted := sorted^.next;
     end;
-  until not swapped;
+
+    // Вставляем current перед sorted
+    current^.next := sorted;
+    if sorted = head then
+      head := current
+    else
+      prev^.next := current;
+
+    current := next; // Переходим к следующему узлу
+  end;
 end;
 
 
@@ -130,7 +135,7 @@ end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 var temp: PNode;
-    j: integer;
+   i: integer;
 begin
   head := nil;
   CreateList(StrToInt(Edit1.Text));
