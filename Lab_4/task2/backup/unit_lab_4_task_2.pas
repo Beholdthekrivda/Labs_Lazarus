@@ -62,42 +62,44 @@ begin
   xmax := StrToFloat(Edit3.Text);
   dot := StrToInt(ComboBox1.Text);
 
-  ymin := -1; //cos(Pi)
-  ymax := 1; //cos(0)
-
-  zx := XI(0, xmax, xmin);
-  zy := YJ(0, ymax, ymin);
-
-  PaintBox1.Canvas.Line(0, zy, PaintBox1.Width, zy); //рисуем ось Ox
-  PaintBox1.Canvas.Line(zx, 0, zx, PaintBox1.Height); //рисуем ось Oy
-
   if xmin >= xmax then
     begin
       ShowMessage('Неправильный ввод');
       exit;
     end;
 
-  step := (abs(xmax) + abs(xmin)) / dot;
+  ymin := 2 * xmin + 3; //cos(Pi)
+  ymax := 2 * xmax + 3; //cos(0)
 
-  PaintBox1.Canvas.Brush.Color := clBlack; // Цвет отрезков
+  //эти две переменные указывают на то где должно быть начало координат
+  //относительно введеных данных
+  zx := XI(0, xmax, xmin);
+  zy := YJ(0, ymax, ymin);
+
+  PaintBox1.Canvas.Line(0, zy, PaintBox1.Width, zy); //рисуем ось Ox
+  PaintBox1.Canvas.Line(zx, 0, zx, PaintBox1.Height); //рисуем ось Oy
+
+  // Рисуем единичные отрезки на оси Ox
   for i := Round(xmin) to Round(xmax) do
   begin
     ix := XI(i, xmax, xmin);
-    PaintBox1.Canvas.Line(ix, zy - 10, ix, zy + 10); // Отрезок длиной 10 пикселей
+    PaintBox1.Canvas.Line(ix, zy - 5, ix, zy + 5); // рисуем вертикальные отрезки
   end;
 
   // Рисуем единичные отрезки на оси Oy
-  for i := Round(ymin - 1) to Round(ymax + 1) do
+  for i := Round(ymin) to Round(ymax) do
   begin
     jy := YJ(i, ymax, ymin);
-    PaintBox1.Canvas.Line(zx - 10, Trunc(jy / 2), zx + 10, Trunc(jy / 2)); // Отрезок длиной 10 пикселей
+    PaintBox1.Canvas.Line(zx - 5, jy, zx + 5, jy); // рисуем горизонтальные отрезки
   end;
 
+  step := (abs(xmax) + abs(xmin)) / dot;
+
   x := xmin;
-  Canvas.Brush.Color := clBlue;
+  PaintBox1.Canvas.Brush.Color := clBlue;
   for i := 1 to dot do
     begin
-      y := cos(x);
+      y := 2 * x + 3;
 
       ix := XI(x, xmax, xmin);
       jy := YJ(y, ymax, ymin);
