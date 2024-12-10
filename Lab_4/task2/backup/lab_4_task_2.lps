@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="lab_4_task_2.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Lab_4_task_2"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="55" Y="2"/>
+        <UsageCount Value="33"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="40"/>
+        <CursorPos X="33" Y="46"/>
+        <UsageCount Value="33"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\task1\unit_lab_4_task_1.lfm"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="74" Y="12"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="71" Column="21" TopLine="61"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="78" Column="54" TopLine="66"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="83" Column="92" TopLine="66"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="86" Column="69" TopLine="73"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="88" Column="48" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="89" Column="48" TopLine="69"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="85" Column="34" TopLine="72"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="89" Column="9" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="85" Column="29" TopLine="75"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="58" Column="65" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="67" Column="36" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="66" Column="31" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="89" Column="42" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="53" Column="49" TopLine="48"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="95" Column="45" TopLine="64"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="97" Column="61" TopLine="83"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="56" Column="46" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="90" Column="69" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="72" Column="42" TopLine="61"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="99" Column="24" TopLine="87"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="96" Column="43" TopLine="87"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="99" Column="57" TopLine="86"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="49" Column="55" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="45" Column="65" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="86" Column="23" TopLine="76"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="89" Column="34" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="93" Column="57" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="88" Column="40" TopLine="79"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="83" Column="45" TopLine="72"/>
+      </Position>
+      <Position>
+        <Filename Value="unit_lab_4_task_2.pas"/>
+        <Caret Line="62" Column="37" TopLine="51"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
