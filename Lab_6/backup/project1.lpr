@@ -172,6 +172,25 @@ begin
   for i := 0 to ArrIndex - 1 do
     writeln(Format('%-15s|%-15s|%-15s|%-15s|%-9s|%-5d|', [arr1[IndexArr6[i]], arr2[IndexArr6[i]], arr3[IndexArr6[i]], arr4[IndexArr6[i]], arr5[IndexArr6[i]], arr6[IndexArr6[i]]]));
 
+  writeln;
+  writeln('Студенты обоих направлений из РФ');
+  writeln;
+
+  //П2
+  for i := 0 to ArrIndex - 1 do
+    begin
+      if Trim(arr2[IndexArr6[i]]) = 'Россия' then
+        writeln(Format('%-15s|%-15s|%-15s|%-15s|%-9s|%-5d|', [arr1[IndexArr6[i]], arr2[IndexArr6[i]], arr3[IndexArr6[i]], arr4[IndexArr6[i]], arr5[IndexArr6[i]], arr6[IndexArr6[i]]]));
+    end;
+
+  writeln;
+
+  //П3
+  for i := 0 to ArrIndex - 1 do
+    begin
+      if Trim(arr2[IndexArr6[i]]) <> 'Россия' then
+        writeln(Format('%-15s|%-15s|%-15s|%-15s|%-9s|%-5d|', [arr1[IndexArr6[i]], arr2[IndexArr6[i]], arr3[IndexArr6[i]], arr4[IndexArr6[i]], arr5[IndexArr6[i]], arr6[IndexArr6[i]]]));
+    end;
 
   readln;
 end.
