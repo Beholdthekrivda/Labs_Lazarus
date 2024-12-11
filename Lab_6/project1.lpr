@@ -3,7 +3,7 @@ program project1;
 
 uses SysUtils, Windows;
 
-var ArrIndex, i, z, j: integer;
+var ArrIndex, i, z, j, count_country, count_region: integer;
     arr1, arr2, arr3, arr4, arr5: array[0..100] of string;
     arr6: array[0..100] of integer;
     IndexArr6: array of integer;
@@ -193,6 +193,33 @@ begin
       if Trim(arr2[IndexArr6[i]]) <> 'Россия' then
         writeln(Format('%-15s|%-15s|%-15s|%-15s|%-9s|%-5d|', [arr1[IndexArr6[i]], arr2[IndexArr6[i]], arr3[IndexArr6[i]], arr4[IndexArr6[i]], arr5[IndexArr6[i]], arr6[IndexArr6[i]]]));
     end;
+
+  //П4
+  writeln;
+  writeln('Единственные студенты из зарубежных стран и регионов РФ');
+  writeln;
+
+  for i := 0 to ArrIndex - 1 do
+  begin
+    count_country := 0;
+    count_region := 0;
+    for j := 0 to ArrIndex - 1 do
+    begin
+      if arr2[IndexArr6[i]] = arr2[IndexArr6[j]] then
+        count_country := count_country + 1;
+      if (arr3[IndexArr6[i]] = arr3[IndexArr6[j]]) and (trim(arr2[IndexArr6[i]]) = 'Россия')then
+        count_region := count_region + 1;
+    end;
+
+    if (count_country = 1) or (count_region = 1) then
+    begin
+      writeln(Format('%-15s|%-15s|%-15s|%-15s|%-9s|%-5d|', [arr1[IndexArr6[i]], arr2[IndexArr6[i]], arr3[IndexArr6[i]], arr4[IndexArr6[i]], arr5[IndexArr6[i]], arr6[IndexArr6[i]]]));
+    end;
+  end;
+
+  writeln;
+
+  writeln('Возрастной диапазон студентов: ', 2024 - arr6[IndexArr6[i]], '-', 2024 - arr6[IndexArr6[0]], ' лет');
 
   readln;
 end.
